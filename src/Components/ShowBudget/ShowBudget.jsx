@@ -11,10 +11,10 @@ const ShowBudget = () => {
       <div className="d-flex justify-content-around">
         <p className="btn btn-primary btn-md ">Budget: Rs.{budget}</p>
         <p className="btn btn-primary btn-md ">
-          Remaining: Rs.{budget - contextData.total}
+          Remaining: Rs. {budget - contextData.total}
         </p>
         <p className="btn btn-primary btn-md ">
-          Spant so far{contextData.total}
+          Spent so far Rs. {contextData.total}
         </p>
       </div>
     </div>
