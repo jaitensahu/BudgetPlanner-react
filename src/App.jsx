@@ -8,6 +8,7 @@ import { useState } from "react";
 
 function App() {
   // useState Variable for Expense List
+  console.log(JSON.parse(localStorage.getItem("ExpenseList")));
   let [expenseList, setExpenseList] = useState(
     JSON.parse(localStorage.getItem("ExpenseList")) != null
       ? JSON.parse(localStorage.getItem("ExpenseList"))
@@ -34,9 +35,11 @@ function App() {
 
   function getTotal() {
     let newTotal = 0;
-    JSON.parse(localStorage.getItem("ExpenseList")).map((ele) => {
+    let arr = JSON.parse(localStorage.getItem("ExpenseList")) != null? JSON.parse(localStorage.getItem("ExpenseList")) : []
+    arr.map((ele) => {
       newTotal = newTotal + Number(ele.cost);
     });
+    console.log(newTotal);
     return newTotal;
   }
 
